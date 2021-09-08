@@ -4,7 +4,7 @@ import time
 #==============================#
 def getweather(canvas):
     city=textfield.get()
-    api="http://api.openweathermap.org/data/2.5/weather?q=" + city + "Keys"
+    api="http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=Keys"
     json_data=requests.get(api).json()
     condition=json_data['weather'][0]['main']
     temp=int(json_data['main']['temp'] - 273.15)
